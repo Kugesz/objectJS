@@ -1,6 +1,7 @@
 const image = document.getElementById("newImage");
 
-images = ["ashoka", "boba_fett", "han", "fortnite1", "fortnite2", "fortnite3", "fortnite4"]
+
+const images = ["ashoka", "boba_fett", "han", "fortnite1", "fortnite2", "fortnite3", "fortnite4"]
 
 function AddHero(newNameInput, newJobInput) {
   let newName = newNameInput.value.split(" ");
@@ -12,24 +13,28 @@ function AddHero(newNameInput, newJobInput) {
 }
 
 function ImageForward() {
-  let currentImage = image.tabIndex(image.src);
+  //  Mennyi az indexe a jelenlegi kepnek
+  let currentImage = images.indexOf(image.src);
 
+  //  Ha az index a tomb vegen jar vissza ugrik az elejere
   if(currentImage == images.length - 1){
-    currentImage.src = images[0];
+    image.src = "pics/" + images[0] + ".jpg";  //  Megvaltoztatjuk a kep forrasat
     return
   }
 
-  currentImage.src = images[currentImage + 1];
-  
+  image.src = "pics/" + images[currentImage + 1] + ".jpg";
+  console.log("elore");
 }
 
 function ImageBack() {
-  let currentImage = "pics/" + image.tabIndex(image.src) + ".jpg";
-
+  let currentImage =  images.indexOf(image.src.replace("pics/", "").replace(".jpg", "")) + ".jpg";
+  console.log("image.src: Ertek: " + image.src.replace("pics/", "").replace(".jpg", "") + ", Tipus: " + typeof(image.src))
+  console.log("currentImage: Ertek: " + currentImage + ", Tipus: " + typeof(currentImage));
   if(currentImage == 0){
-    currentImage == "pics/" + images[images.length - 1] + ".jpg";
+    image = "pics/" + images[images.length - 1] + ".jpg";
     return
   }
 
-  currentImage.src = images[currentImage - 1];
+  image.src = images[currentImage - 1];
+  console.log("hatra");
 }
