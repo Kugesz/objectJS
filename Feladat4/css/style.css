@@ -20,9 +20,6 @@
 
 img {
   width: 100px;
-  aspect-ratio: 1;
-}
-
-img{
   margin: 0 auto;
+  aspect-ratio: 1;
 }
