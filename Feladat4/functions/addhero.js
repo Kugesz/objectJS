@@ -6,3 +6,7 @@ function AddHero(newNameInput, newJobInput) {
   }
   heroes.push({ firstName: newName[0], lastName: newName[0], job: newJob, iconName: "" });
 }
+
+function ChangePicture(){
+  
+}

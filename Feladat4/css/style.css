@@ -1,3 +1,7 @@
+* {
+  text-align: center;
+}
+
 .card {
   width: 15vw;
   height: 30vh;
@@ -12,4 +16,13 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+img {
+  width: 100px;
+  aspect-ratio: 1;
+}
+
+img{
+  margin: 0 auto;
 }

@@ -2,7 +2,7 @@ function Render() {
   cardsContainer.innerHTML = ``;
   heroes.forEach(element => {
     let s = `<div class="card">
-              <img src="${element.iconName}" alt="icon">
+              <img src="pics/${element.iconName}.jpg" alt="icon">
               <h2 id="name">${element.firstName + " " + element.lastName}</h2>
               <p id="job">${element.job}</p>
              </div>`
