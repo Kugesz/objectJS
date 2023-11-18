@@ -12,7 +12,7 @@ function Render() {
   cardsContainer.innerHTML += `    <div id="cardsContainer">
   <div class="card" id="newCard">
     <div class="row d-flex justify-content-around" style="height: 50px;">
-    <i style='font-size:24px' class='fas' onclick ="ImageBack()">&#xf104;</i>
+    <i style='font-size:24px' class='fas' onclick ="GetName()">&#xf104;</i>
     <img src="pics/ashoka.jpg" alt="" id="newImage">
     <i style='font-size:24px' class='fas' onclick = "ImageForward()">&#xf105;</i>
     </div>
