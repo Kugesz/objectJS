@@ -15,21 +15,22 @@
   </head>
   <body>
     <div id="cardsContainer">
+
       <div class="card" id="newCard">
-        <div id="cardsContainer">
-            <div class="card" id="newCard">
-              <div class="row d-flex justify-content-around" style="height: 50px;">
-                <i style='font-size:24px' class='fas' onclick ="GetName()">&#xf104;</i>
-                <img src="pics/ashoka.jpg" alt="" id="newImage">
-                <i style='font-size:24px' class='fas' onclick = "ImageForward()">&#xf105;</i>
-              </div>
+        <div class="row d-flex justify-content-around" style="height: 50px; display: block;">
+          <i style='font-size:24px' class='fas' onclick ="ImageBack()">&#xf104;</i>
+          <img src="pics/ashoka.jpg" alt="" id="newImage">
+          <i style='font-size:24px' class='fas' onclick = "ImageForward()">&#xf105;</i>
+        </div>
+        <div>
+          <input type="text" id="newName">
+          <input type="text" id="newJob">
           
-              <input type="text" id="newName">
-              <input type="text" id="newJob">
-          
-              <button id="createNewCard">Hozzáadás</button>
-            </div>
-          </div>
+          <p id="error" style="color: red; text-align: center;"></p>
+  
+          <button id="createNewCard" onclick="AddHero()">Hozzáadás</button>
+        </div>
+      </div>
     </div>
   </body>
   <script src="functions/checkinput.js"></script>

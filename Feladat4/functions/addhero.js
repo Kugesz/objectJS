@@ -1,43 +1,52 @@
 const images = ["ashoka", "boba_fett", "han", "fortnite1", "fortnite2", "fortnite3", "fortnite4"]
 
-function AddHero(newNameInput, newJobInput) {
+function AddHero() {
+  let newNameInput = document.getElementById("newName");
+  let newJobInput = document.getElementById("newJob");
+
   let newName = newNameInput.value.split(" ");
   let newJob = newJobInput.value;
+  let newImage = GetName();
 
   if (CheckInput(newName, newJob)) {
+    heroes.push({ firstName: newName[0], lastName: newName[1], job: newJob, iconName: newImage });  //  Hozzaadjuk az uj elemet
+
+    Render(); //  Megjelenitjuk az elemeket
   }
-  heroes.push({ firstName: newName[0], lastName: newName[0], job: newJob, iconName: "" });
 }
 
 function ImageForward() {
+  let image = document.getElementById("newImage");
+
   //  Mennyi az indexe a jelenlegi kepnek
-  let currentImage = images.indexOf(image.src);
+  let currentImage = GetName();
+  let currentImageIndex = images.indexOf(currentImage);
 
   //  Ha az index a tomb vegen jar vissza ugrik az elejere
   if(currentImage == images.length - 1){
-    image.src = "pics/" + images[0] + ".jpg";  //  Megvaltoztatjuk a kep forrasat
+    ChangePicture(0);  //  Megvaltoztatjuk a kep forrasat
     return
   }
 
-  image.src = "pics/" + images[currentImage + 1] + ".jpg";  //  Megvaltoztatjuk a kep forrasat
-  console.log("elore");
+  ChangePicture(currentImageIndex + 1);  //  Megvaltoztatjuk a kep forrasat
 }
 
 function ImageBack() {
-  let currentImage =  images.indexOf(image.src.replace("pics/", "").replace(".jpg", "")) + ".jpg";
-  // console.log("image: " + image + " tipus: " + typeof(image));
-  // console.log("image.src: Ertek: " + image.src.replace("pics/", "").replace(".jpg", "") + ", Tipus: " + typeof(image.src))
-  // console.log("currentImage: Ertek: " + currentImage + ", Tipus: " + typeof(currentImage));
-  if(currentImage == 0){
-    image = "pics/" + images[images.length - 1] + ".jpg"; //  Megvaltoztatjuk a kep forrasat
+  let image = document.getElementById("newImage");
+
+  let currentImage = GetName();
+  let currentImageIndex =  images.indexOf(currentImage);
+
+  if(currentImageIndex == 0){
+    ChangePicture(images.length - 1); //  Megvaltoztatjuk a kep forrasat
     return
   }
 
-  image.src = images[currentImage - 1]; //  Megvaltoztatjuk a kep forrasat
-  console.log("hatra");
+  ChangePicture(currentImageIndex - 1); //  Megvaltoztatjuk a kep forrasat
 }
 
 function GetName() {
+  let image = document.getElementById("newImage");
   let src = image.src;  // source ki szedes
 
   let srcSplit = src.split("/")
@@ -48,10 +57,8 @@ function GetName() {
   return fileName;
 }
 
-function ChangePicture() {
+function ChangePicture(i) {
   let image = document.getElementById("newImage");
   
-  console.log(image.src)
-  image.src = "pics/" + images[1] + ".jpg?" + new Date().getTime();
-  console.log(image.src)
+  image.src = "pics/" + images[i] + ".jpg";
 }

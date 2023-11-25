@@ -3,9 +3,10 @@
 }
 
 .card {
-  width: 15vw;
-  height: 30vh;
+  width: 20vw;
+  height: 40vh;
 
+  margin: 1vw;
   padding: 5px;
 
   background-color: aqua;
@@ -19,7 +20,8 @@
 }
 
 img {
-  width: 100px;
+  width: 150px;
+  display: block;
   margin: 0 auto;
   aspect-ratio: 1;
 }
