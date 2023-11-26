@@ -2,15 +2,20 @@
   text-align: center;
 }
 
-.card {
-  width: 20vw;
-  height: 40vh;
+p{
+  font-size: 20px;
+}
 
+.card {
+  width: 300px;
   margin: 1vw;
   padding: 5px;
-
-  background-color: aqua;
+  background-color: #d6d5d6;
   border-radius: 5px;
+}
+
+.card p#job {
+  margin-bottom: 45px;
 }
 
 #cardsContainer {
@@ -20,8 +25,27 @@
 }
 
 img {
-  width: 150px;
+  width: 70%;
   display: block;
-  margin: 0 auto;
+  margin: 5% auto;
   aspect-ratio: 1;
+  border-radius: 5px;
+}
+
+div#newCard input {
+  width: 60%;
+  margin: 2% auto;
+  padding: 0.5%;
+  border-radius: 5px
+}
+
+p#error {
+  color: red;
+  text-align: center;
+}
+
+button#createNewCard {
+  width: 40%;
+  margin: 0 auto;
+  padding: 1%
 }

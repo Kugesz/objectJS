@@ -11,6 +11,5 @@ function CheckInput(name, job) {
     return false;
   }
 
-  console.log("Hozzadva")
   return true;
 }
